@@ -1,23 +1,31 @@
 package com.tazering;
 
-
-import java.awt.print.Book;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
+<<<<<<< HEAD
     private boolean test;
     private boolean wonAward;
 
     public boolean isWonAward() {
         return wonAward;
     }
+=======
+
+    public static void main(String args[]) {
+
+        ArrayList<Double> observedValues = new ArrayList<>();
+
+>>>>>>> 5038f1dbdf6f461f23e72c08564533f351f1a544
 
     public void setWonAward(boolean wonAward) {
         this.wonAward = wonAward;
     }
+<<<<<<< HEAD
 
     public boolean isTest() {
         return test;
@@ -35,3 +43,6 @@ public class Main {
     }
 
 }
+=======
+}
+>>>>>>> 5038f1dbdf6f461f23e72c08564533f351f1a544
