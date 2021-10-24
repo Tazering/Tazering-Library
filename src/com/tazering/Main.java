@@ -8,7 +8,30 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("a".compareTo("b"));
+    private boolean test;
+    private boolean wonAward;
+
+    public boolean isWonAward() {
+        return wonAward;
     }
+
+    public void setWonAward(boolean wonAward) {
+        this.wonAward = wonAward;
+    }
+
+    public boolean isTest() {
+        return test;
+    }
+
+    public void setTest(boolean test) {
+        this.test = test;
+    }
+
+    public static void main(String[] args) {
+        String a = new String("apple");
+        String b = new String("apple");
+        System.out.println(a == b);
+        System.out.println(a.equals(b));
+    }
+
 }
