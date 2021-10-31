@@ -12,4 +12,12 @@ public class Visa extends CreditCard implements Payments{
     public boolean hasSufficientFunds(double amount) {
         return true;
     }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
 }
