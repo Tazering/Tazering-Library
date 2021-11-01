@@ -1,4 +1,4 @@
-package com.tazering.hashsets;
+package com.tazering.hashsetsandmaps;
 
 import java.util.ArrayList;
 

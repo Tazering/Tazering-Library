@@ -1,4 +1,4 @@
-package com.tazering.hashsets.practice;
+package com.tazering.hashsetsandmaps.practice;
 
 import java.util.HashSet;
 
