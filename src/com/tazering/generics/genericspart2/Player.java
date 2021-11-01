@@ -1,4 +1,4 @@
-package com.tazering.Learning.generics.genericspart2;
+package com.tazering.generics.genericspart2;
 
 public abstract class Player {
     private String name;

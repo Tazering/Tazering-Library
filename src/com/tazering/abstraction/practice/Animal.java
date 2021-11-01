@@ -1,4 +1,4 @@
-package com.tazering.Learning.abstraction.practice;
+package com.tazering.abstraction.practice;
 /**
  *
  * @author CS 2110 Faculty

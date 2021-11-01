@@ -1,24 +1,24 @@
-package com.tazering.Learning.abstraction.practice;
+package com.tazering.abstraction.practice;
 /**
  *
  * @author CS 2110 Faculty
- * Cat class, subclass of Animal
+ * Dog subclass of Animal
  *
  */
-public class Cat extends Animal {
+public class Dog extends Animal {
     String breed;
     /** constructor */
-    public Cat(String name) {
+    public Dog(String name) {
         super(name);
     }
     /** constructor */
-    public Cat(String name, String breed) {
+    public Dog(String name, String breed) {
         super(name);
         this.breed = breed;
     }
     /** overridden makeNoise behavior */
     public String makeNoise() {
-        return "Miaw!";
+        return "Woof!";
     }
 }
 

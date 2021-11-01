@@ -1,4 +1,4 @@
-package com.tazering.Learning.abstraction;
+package com.tazering.abstraction;
 
 abstract class Product {
 

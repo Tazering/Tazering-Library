@@ -1,4 +1,4 @@
-package com.tazering.Learning.lambda;
+package com.tazering.lambda;
 
 import java.util.*;
 

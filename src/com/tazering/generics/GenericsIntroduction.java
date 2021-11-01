@@ -1,4 +1,4 @@
-package com.tazering.Learning.generics;
+package com.tazering.generics;
 
 import java.util.ArrayList;
 
