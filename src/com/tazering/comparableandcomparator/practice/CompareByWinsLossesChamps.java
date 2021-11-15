@@ -32,7 +32,7 @@ public class CompareByWinsLossesChamps implements Comparator<BasketBallTeam> {
                 return 1;
             }
         }
-        
+
         return 0;
 
     }
