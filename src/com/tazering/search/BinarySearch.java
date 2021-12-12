@@ -1,30 +1,59 @@
 package com.tazering.search;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class BinarySearch {
 
-    public static int binarySearch(int upper, int lower, ArrayList<String> elements, String target) {
-        int mid = (upper + lower)/2;
+    public static void main(String[] args) {
+        final String BIG_O_COMPLEXITY = "O(log(n))";
+        int value = 7;
 
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(0, 3, 6, 3, 2, 0, 1, 6, 10, 17, 7));
+        Collections.sort(arrayList);
+        System.out.println("Binary Search Algorithm");
+        System.out.println("Big O complexity: " + BIG_O_COMPLEXITY);
+        System.out.println("ArrayList must be sorted first.");
+        System.out.println("");
+
+        System.out.println("Input: " + arrayList.toString());
+        System.out.println("Using binary search algorithm to find: " + value);
+        System.out.println("Running algorithm...");
+        System.out.println("");
+
+        System.out.println("Found value " + value + " at index " + binarySearch(arrayList, value));
+    }
+
+    public static int binarySearch(ArrayList<Integer> arr, int value) {
+        return binarySearchAlgorithm(arr, 0, arr.size()-1, value);
+    }
+
+    public static int binarySearchAlgorithm(ArrayList<Integer> arr, int low, int high, int value) {
         //base case
-        if(upper < lower) {
+        if(low > high) {
             return -1;
-        } else if(target.equals(elements.get(mid))) {
-            return mid;
         }
+
+        int mid = (low + high)/2;
+
+        System.out.println("Mid Value: " + arr.get(mid));
 
         //recursive case
-        if(target.compareTo(elements.get(mid)) > 0) {
-            return binarySearch(upper, mid + 1, elements, target);
+        if(arr.get(mid) == value) {
+            return mid;
+        } else if(arr.get(mid) < value) {
+
+            low = mid + 1;
+
+        } else {
+
+            high = mid - 1;
+
         }
 
-        if(target.compareTo(elements.get(mid)) < 0) {
-            return binarySearch(mid - 1, lower, elements, target);
-        }
-
-        return -1;
-
+        return binarySearchAlgorithm(arr, low, high, value);
     }
 
 }
