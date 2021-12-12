@@ -21,8 +21,7 @@ public class MergeSort {
         System.out.println("Sorted List: " + printArray(arr));
     }
 
-    static void merge(int arr[], int l, int m, int r)
-    {
+    static void merge(int arr[], int l, int m, int r) {
         // Find sizes of two subarrays to be merged
         int n1 = m - l + 1;
         int n2 = r - m;
@@ -73,8 +72,7 @@ public class MergeSort {
 
     // Main function that sorts arr[l..r] using
     // merge()
-    static void mergeSort(int arr[], int l, int r)
-    {
+    static void mergeSort(int arr[], int l, int r) {
         if (l < r) {
             // Find the middle point
             int m =l+ (r-l)/2;

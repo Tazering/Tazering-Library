@@ -16,8 +16,6 @@ public class SearchAlgorithmCompare {
         System.out.println("Binary Search...");
         System.out.println("Results in index: " + binarySearch(arr, value));
 
-
-
     }
 
     //sequential search
