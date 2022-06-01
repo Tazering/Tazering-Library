@@ -4,6 +4,10 @@ public class BinarySearchTree {
 
     Node root;
 
+    public static void main(String[] args) {
+        BinarySearchTree bst = new BinarySearchTree();
+    }
+
     public BinarySearchTree() {
         this.root = new Node();
     }

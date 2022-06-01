@@ -25,6 +25,7 @@ public class BankAccount {
             balance = newBalance;
             accessAccountLock.unlock();
             accessAccountCondition.signalAll();
+            
         } finally {
             accessAccountLock.unlock();
         }
