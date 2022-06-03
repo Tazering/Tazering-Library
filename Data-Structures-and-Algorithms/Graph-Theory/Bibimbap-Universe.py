@@ -4,7 +4,7 @@ from collections import namedtuple
 
 print("Import Complete")
 
-bibimbopUniverse = namedtuple("BibimbopUniverse", ["vertices", "edges"])
+Graph = namedtuple("Graph", ["vertices", "edges"])
 
 kingdoms = ["Rice Castle", "Carrot City", "Onion City", "Mushroom City", "Zucchinni City", "Spicy Pork City", "Gochujjang River", "Bulgogi City", "Ground Beef City", "Tofu City",
             "Galbi City", "Poultry Deadlands", "Outcast Vegetable Lands", "Eggplant City"]
@@ -29,3 +29,5 @@ edges = [
     ("Tofu City", "Outcast Vegetable Lands"),
     ("Eggplant city", "Outcast Vegetable Lands"),
 ]
+
+G = Graph("Bibimbop Universe", [kingdoms, edges])

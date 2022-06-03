@@ -26,6 +26,17 @@
 - O(V + E) where V is a vertex and E is an edge
     - linear
 
+**Dijkstra's Algorithm**
+- Process
+
+    1. start at a random node
+    2. find cheapest node
+    3. check whether there is a cheaper path to the neighbors of this node
+        - update cost accordingly
+    4. repeat until cheapest cost is known for every node
+    5. calculate final path
+    
+
 **Queue**: first in, first out
 - *enqueue*: adds the element to the front of the queue
 - *dequeue*: removes the oldest element in the queue
