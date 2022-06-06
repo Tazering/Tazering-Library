@@ -35,11 +35,23 @@
         - update cost accordingly
     4. repeat until cheapest cost is known for every node
     5. calculate final path
-    
+
+## **Greedy Algorithms**
+- at each step, pick the most optimal move
+- solves the problem pretty well
+
+*Approximation Algorithm*: solves something pretty well
+- speed
+- how close to optimal solution
+
+Travelling Sales person has O(n!) time
+
+*NP-complete*: problems that are very hard to solve
 
 **Queue**: first in, first out
 - *enqueue*: adds the element to the front of the queue
 - *dequeue*: removes the oldest element in the queue
 
 **Stack**: last in, first out
+
 
