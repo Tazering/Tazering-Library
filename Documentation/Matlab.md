@@ -5,7 +5,29 @@ Matlab is a high-level programming language and interactive environment for nume
 
 ## **Installations**
 
+
+
 ## **Syntax**
+
+## **Commands**
+
+Matrix Creation
+
+```python
+a = [1 2 3 4; 5 6 7 8]
+# create 2 x 4 matrix 
+#[1 2 3 4]
+#[5 6 7 8]
+```
+- semicolon indicates next row
+
+Reduced Row-Echelon Form
+```python
+rref(M)
+# looks for the reduced row echelon form of a matrix
+```
+- *M* is the parameter of data type: matrix
+    - the matrix you want to reduce
 
 ## **Resources**
 
