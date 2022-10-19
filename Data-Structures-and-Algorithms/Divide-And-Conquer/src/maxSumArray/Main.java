@@ -6,7 +6,11 @@ public class Main {
 
         int[] example = {13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7};
 
+        System.out.println("Divide and Conquer Algorithm...");
         printArray(findMaxSubArray(example, 0, example.length-1));
+
+        System.out.println("Brute Force");
+        printArray(bruteForce(example));
 
     }
 
@@ -34,8 +38,6 @@ public class Main {
                 return cross;
             }
         }
-
-
     }
 
     public static int[] findCrossMaxArray(int[] A, int low, int mid, int high) {
@@ -66,6 +68,35 @@ public class Main {
         }
 
         int[] output = {maxLeft, maxRight, leftSum + rightSum};
+        return output;
+    }
+
+    public static int[] bruteForce(int[] A) {
+        int[] output = new int[3];
+
+        int maxLeft = -1;
+        int maxRight = -1;
+        int sum = 0;
+        int maxSum = Integer.MIN_VALUE;
+
+        for(int i = 0; i < A.length; i++) {
+            for(int j = i; j < A.length; j++) {
+                sum += A[j];
+
+                if(sum > maxSum) {
+                    maxSum = sum;
+                    maxLeft = i;
+                    maxRight = j;
+                }
+            }
+
+            sum = 0;
+        }
+
+        output[0] = maxLeft;
+        output[1] = maxRight;
+        output[2] = maxSum;
+
         return output;
     }
 
