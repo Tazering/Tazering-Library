@@ -20,7 +20,7 @@
   - api
   - governance  
 
-## **Architecture**
+### **Architecture**
 
 **Components**
 - kubernetes
@@ -37,7 +37,7 @@ Nodes have containers
 built-in SCM -> CI/CD => container registry => stores information for the images
 nodes managed by one or more master nodes
 
-## **Management**
+### **Management**
 
 - 3 ways to interact with openshift
   - web console
@@ -73,7 +73,7 @@ nodes managed by one or more master nodes
   - deny all
     - edit by config file
 
-## **Source Code Management**
+### **Source Code Management**
 
 - built-in integration to source code management tools
 - Build
@@ -85,11 +85,44 @@ nodes managed by one or more master nodes
   - push to registry
   - deploy
 
-## **Application Deployment**
+### **Application Deployment**
 
+### **Networks, Services, Routes, and Scaling**
 
+- each pod has IP address
+  - need to communicate with each other
+- handled by OpenShift SDN
+  - software defined networks
+  - called "overlay"
+  - uses Open vSwitch layout
+    - virtual switch
+    - default IP address: <mark>10.128.0.0/14</mark>
+- built-in DNS server
+  - uses SkyDNS
+- Recommended: <mark>use services</mark>
+- **ovs**: assigns each project with unique virtual id
 
-## **Commands**
+**Services and Routes**
+
+- services
+  - acts as load balancers
+  - link service to pod <= selector
+- route
+  - provides way of connection for external users using host net
+  - load balancing
+    - protocols include *source*, *round robin*, and *leastconn*
+  - security
+  - split strategy
+
+**Scaling**: change # of replicas
+
+### **Storage**
+
+- containers supposed to last short period of time
+  - persistent volumne
+  - supported plugins 
+
+### **Commands**
 ```oc login -u system:admin``` login as system admin user
 
 ```oc get users``` get all the users
@@ -97,6 +130,8 @@ nodes managed by one or more master nodes
 ```oc get projects``` gets the projects
 
 ```oc adm policy add-cluster-role-to-user cluster-admin <username>``` make username as cluster admin
+
+```oc get pods -o wide``` -> see IP Addressof pods
 
 ## **Setup**
 - hosted on public or private clouds
@@ -136,6 +171,13 @@ nodes managed by one or more master nodes
    sudo curl -L https://github.com/dhiltgen/docker-machine-kvm/releases/download/v0.7.0/docker-machine-driver-kvm -o /usr/local/bin/docker-machine-driver-kvm
    sudo chmod +x /usr/local/bin/docker-machine-driver-kvm
    ```
+
+
+
+## **Resources**
+
+[KodeKloud's OpenShift for Absolute Beginners](https://www.udemy.com/course/learn-openshift/?kw=openshift+for+absolute&src=sac)
+
 
 
 

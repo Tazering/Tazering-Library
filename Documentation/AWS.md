@@ -72,6 +72,7 @@
     - IP range
     - inbound network
     - outbound network
+  - <mark>if you see a TIMEOUT error, it is always a security issue</mark>
   - attached to multiple instances
   - locked to region
   - good to maintain one separate security group for ssh access
@@ -90,6 +91,18 @@
     - `ssh -i .\<.pem file> ec2-user@<public ip>`
 - **ec2 instance connect**
   - never enter access id into aws servers
+
+### **EBS (Elastic Block Store)**
+
+- **EBS**: network drive to attach to instance
+  - basically VIRTUAL usb drive
+  - cannot attacht o multiple instances
+- delete on termination => can be controlled
+
+**AMI**: Amazon Machine Image
+- customization of EC2 instance
+- built for specific region
+- launch EC2 instance
 
 ### **S3**
 
