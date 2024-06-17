@@ -3,10 +3,11 @@
 ## **General Notes**
 - Red Hat's Platform-As-A-Service (PaaS)
 - flavors
-  - *origin*: open source aplication container platform
+  - *origin*: open source application container platform
   - *online*: public application development hosting service
   - *dedicted*: manged private cluster on AWS/Google Clouds
   - *enterprise*: on-premise private PaaS
+- **clusters**: a group of servers
 - **origin**
   - based on docker containers and kubernetes cluster manager
   - added tools for rapid application development, deployment, and lifecycle management
@@ -106,15 +107,33 @@ nodes managed by one or more master nodes
 
 - services
   - acts as load balancers
-  - link service to pod <= selector
+  - exposes/handles pods using a selector
+  - parts
+    - port for proxy to listen on
+    - selector to determine which pod
 - route
   - provides way of connection for external users using host net
   - load balancing
     - protocols include *source*, *round robin*, and *leastconn*
   - security
   - split strategy
+  - `host` field shows the DNS of application
+  - `weight` field balances the load of pods
 
 **Scaling**: change # of replicas
+
+**DeploymentConfig**
+- serve as template for pods
+- have multiple pods
+- by default, creates a new replication controller everytime a new version of the application comes out
+
+**Replication Controllers**
+- control and monitor the number of pods in a deployment config
+
+**ConfigMaps**
+- holds configuration data for pods to use
+- has 1MB limit
+- any resource can use
 
 ### **Storage**
 
@@ -123,15 +142,63 @@ nodes managed by one or more master nodes
   - supported plugins 
 
 ### **Commands**
-```oc login -u system:admin``` login as system admin user
+`crc setup`: verify if configuration was sucessfully downloaded
 
-```oc get users``` get all the users
-
-```oc get projects``` gets the projects
+`exit`: exits the pod shell
 
 ```oc adm policy add-cluster-role-to-user cluster-admin <username>``` make username as cluster admin
 
-```oc get pods -o wide``` -> see IP Addressof pods
+`oc create <resource type> <name of resource> <data of resource>`: creates a new resource with given parameters
+- `... configmap <name of configmap> <data of configmap>`: creates a new config map with specified data
+- `... configmap <name of cm> --from-file=<name of file>`: creates a new config map from a specified directory
+
+`oc delete ...`: deletes a resource
+- `... <resource type> <resource name>` OR `... <resource type>/<resource name>`: deletes the resource
+- `... all -l <label>`: deletes all things with the associated label
+
+`oc describe <resource>`: describes a resource
+- `<resource type>/<resource>`: describes a particular resource given its type
+
+`oc explain <item to explain>...`: fetches the built-in documentation for your item of interest
+- `pod ...`: for pods
+- `pod.spec...`: for the spec section
+- `pod.spec.containers`: for the containers section
+- `pod.spec.containers.env`: for the env sections (look at the yaml file)
+- `services`: explains services
+
+`oc expose ...`: exposes a pod to a given port
+- `... --port <port #> <pod>`: exposes a pod via a given port
+- `... <service>`: creates a route for your application
+
+`oc get <resource type>`: grabs the list of running pods
+- `dc`: grabs deployment config
+- `istag`: grabs image tag
+- `pods..`: grabs lists of pods
+  - `.. -o wide`: grabs the ip addresses of the pods
+  - `.. --watch`: watches progress of pods
+- `projects`: grabs projects
+- `rc`: grabs the replication controllers
+- `svc..` grabs the list of services
+- `users`: grabs the users
+- `-o yaml <resource type>/<resource name>`: grabs the output in yaml format
+
+```oc login -u system:admin``` login as system admin user
+
+`oc logs -f <build type>/<build name>`: tracks progress of a build
+
+`oc new-app <image tag/gitlab repository> --as-deployment-config`: creates a new deployment configuration 
+
+`oc new-project <name of project>`: setup a new project
+
+`oc project <name of project>`: switch to a different project
+
+`oc projects`: list all projects 
+
+`oc rsh <pod name>`: opens shell terminal of a pod
+
+`oc set env dc/<name of dc> --from cm/<name of config map>`: sets environment variables in the pods of the deploymentconfig with that in the configmap
+
+`oc whoami`: shows information about the active user
 
 ## **Setup**
 - hosted on public or private clouds

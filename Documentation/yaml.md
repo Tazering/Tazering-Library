@@ -1,6 +1,7 @@
-# ***YAML Files***
+# ***Yet Another Markup Language (YAML) Files***
 
-- way of representing data
+## **Notes**
+- yaml is a way of representing data
 
 ```yaml
 Fruit: Apple
@@ -8,21 +9,17 @@ Vegetable: Carrot
 Liquid: Water
 Meat: Chicken
 ```
-- Key-Value Pair
-  - need space before value
-  
-```yaml
-Fruits:
--   Orange
--   Apple
--   Banana
 
-Vegetables:
--   Carrot
--   Cauliflower
--   Tomato 
+### **Key-Value Pairs**
+- need space before value
+- nested key-value pairs
+
+```yaml
+outerKey:
+  innerKey1: 1
+  innerKey2: 2
 ```
-- Arrays and Lists
+### **Arrays and Lists**
   - same indent size after `-`
 
 ```yaml
@@ -35,6 +32,20 @@ Grapes:
     Calories: 62
     Fat: 0.3 g
     Carbs: 16 g
+```
+
+Creates a List
+```yaml
+Fruits:
+-   Orange
+-   Apple
+-   Banana
+
+Vegetables:
+-   Carrot
+-   Cauliflower
+-   Tomato 
+```
 ```
 - dictionary/maps
   - equal number of blank spaces
